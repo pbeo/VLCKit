@@ -425,6 +425,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		34C7DD602916A9AA0035376F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		3C4A7E19281C538100577290 /* VLCMediaMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VLCMediaMetaData.h; path = Headers/Public/VLCMediaMetaData.h; sourceTree = "<group>"; };
 		3C4A7E1D281C53AF00577290 /* VLCMediaMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VLCMediaMetaData.m; path = Sources/VLCMediaMetaData.m; sourceTree = "<group>"; };
 		3F7CC79621D69CB40094B074 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = Resources/TVVLCKit/module.modulemap; sourceTree = SOURCE_ROOT; };
@@ -746,6 +747,7 @@
 		0867D691FE84028FC02AAC07 /* MobileVLCKit */ = {
 			isa = PBXGroup;
 			children = (
+				34C7DD602916A9AA0035376F /* Package.swift */,
 				7A5ECAE211DE8FD200F66AF3 /* Headers */,
 				08FB77AEFE84172EC02AAC07 /* Sources */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
