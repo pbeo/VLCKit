@@ -1,7 +1,7 @@
-From 864225d55413e016b43d1c8581012217f94ac29f Mon Sep 17 00:00:00 2001
+From 0a4e81c34f34712099dd70fc4c553fd5d4845527 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Felix=20Paul=20K=C3=BChne?= <felix@feepk.net>
 Date: Tue, 16 Feb 2021 17:04:59 +0100
-Subject: [PATCH 10/18] contrib/ffmpeg: fix cross-compilation for macOS on
+Subject: [PATCH 10/11] contrib/ffmpeg: fix cross-compilation for macOS on
  macOS
 
 ---
@@ -9,12 +9,12 @@ Subject: [PATCH 10/18] contrib/ffmpeg: fix cross-compilation for macOS on
  1 file changed, 2 insertions(+)
 
 diff --git a/contrib/src/ffmpeg/rules.mak b/contrib/src/ffmpeg/rules.mak
-index 0aa82fdeac..309b1edc0e 100644
+index 064f4ab642..8df01586fc 100644
 --- a/contrib/src/ffmpeg/rules.mak
 +++ b/contrib/src/ffmpeg/rules.mak
-@@ -139,6 +139,8 @@ FFMPEGCONF += --enable-pic --extra-ldflags="$(EXTRA_CFLAGS) -isysroot $(IOS_SDK)
- ifdef HAVE_NEON
- FFMPEGCONF += --as="$(AS)"
+@@ -154,6 +154,8 @@ FFMPEGCONF += --enable-parser='aac,aac_latm,ac3,adpcm,amr,aac_latm,ape,cook,dca,
+ FFMPEGCONF += --enable-demuxer='aac,ac3,adts,aiff,ape,asf,au,avi,caf,daud,dirac,dts,dv,ea,flac,flv,gsm,ivf,matroska,mmf,mov,mp3,mpeg,ogg,pcm,rm,sbc,sdp,shorten,voc,w64,wav,wv'
+ FFMPEGCONF += --enable-swresample
  endif
 +else
 +FFMPEGCONF += --enable-pic --extra-ldflags="$(EXTRA_CFLAGS) -isysroot $(MACOSX_SDK)"
@@ -22,5 +22,5 @@ index 0aa82fdeac..309b1edc0e 100644
  endif
  
 -- 
-2.32.1 (Apple Git-133)
+2.39.3 (Apple Git-146)
 

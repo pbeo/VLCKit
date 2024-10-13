@@ -1,7 +1,7 @@
-From bddd55cab849809a02fe4a2d44f010d6fb6d2193 Mon Sep 17 00:00:00 2001
+From dc1d32347639e4c21512494e059cf0c196d96b24 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Hugo=20Beauz=C3=A9e-Luyssen?= <hugo@beauzee.fr>
 Date: Mon, 26 Mar 2018 16:44:44 +0200
-Subject: [PATCH 03/18] modules:common: Use the full module name as MODULE_NAME
+Subject: [PATCH 03/11] modules:common: Use the full module name as MODULE_NAME
 
 This avoid conflicts when linking modules staticly on platforms that don't have objdump
 ---
@@ -9,7 +9,7 @@ This avoid conflicts when linking modules staticly on platforms that don't have 
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/modules/common.am b/modules/common.am
-index 79f6ef1577..cc276af545 100644
+index 938e67c6c2..2bbce55972 100644
 --- a/modules/common.am
 +++ b/modules/common.am
 @@ -17,12 +17,13 @@ LTLIBVLCCORE = $(top_builddir)/src/libvlccore.la
@@ -20,7 +20,7 @@ index 79f6ef1577..cc276af545 100644
  
  AM_CPPFLAGS = -DMODULE_STRING=\"$(MODULE_STRING)\"
  if HAVE_DYNAMIC_PLUGINS
- AM_CPPFLAGS += -D__PLUGIN__
+ AM_CPPFLAGS += -DVLC_DYNAMIC_PLUGIN
  else
 -AM_CPPFLAGS += -DMODULE_NAME=$(MODULE_NAME)
 +AM_CPPFLAGS += -DMODULE_NAME=$(MODULE_FULLNAME)
@@ -28,5 +28,5 @@ index 79f6ef1577..cc276af545 100644
  AM_CFLAGS =
  AM_CXXFLAGS =
 -- 
-2.32.1 (Apple Git-133)
+2.39.3 (Apple Git-146)
 
